@@ -5,6 +5,19 @@
 # Default setting no args if you already know stationID
 def=weather.noaa.gov/pub/data/observations/metar/decoded/KSBD.TXT
 
+# Find if nsd_cccc.txt (station list) exists and if not download it.
+if [ ! -r "`pwd`/nsd_cccc.txt" ]
+then
+       wget -q weather.noaa.gov/data/nsd_cccc.txt
+       else
+       if [ $? -n ]
+       then
+       echo 'Error: Could not locate station list "nsd_cccc.txt"'
+       echo 'Copy Station List from weather.noaa.gov/data/nsd_cccc.txt and place file in same dir as script'
+       exit 1
+       fi
+       fi
+
 #Help screen
 
 helpfunction () {
