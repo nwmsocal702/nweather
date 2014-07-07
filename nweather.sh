@@ -3,7 +3,7 @@
 # Get informtion getopts: basically just saves output of different command line switch arguments into variables
 
 # Default setting no args if you already know stationID
-# Replace "KSBD" with the the station ID of your choice from nsd_cccc.txt
+# Replace "KSBD" in line below with the the four letter station ID of your choice from nsd_cccc.txt
 def=weather.noaa.gov/pub/data/observations/metar/decoded/KSBD.TXT
 
 # Find if nsd_cccc.txt (station list) exists and if not download it.
