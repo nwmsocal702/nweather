@@ -1,7 +1,7 @@
 nweather
 ========
 
-Bash utility to check current weather conditions throughout the world
+Bash utility to check current weather conditions throughout the world.
 This program Nweather.sh downloads current weather conditions through the National Weather Service station list from all over the world.
 
-Once the station list is downloaded from weather.noaa.gov/data/nsd_cccc.txt
+Once the station list is downloaded from weather.noaa.gov/data/nsd_cccc.txt this program allows you download and display in terminal the current weather conditions from the station of your choice.
