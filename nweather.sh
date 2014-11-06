@@ -11,7 +11,7 @@ if [ ! -r "`pwd`/nsd_cccc.txt" ]
 then
        wget -q weather.noaa.gov/data/nsd_cccc.txt
        else
-       if [ $? -n ]
+       if [ ! -r "`pwd`/nsd_cccc.txt" ]
        then
        echo 'Error: Could not locate station list "nsd_cccc.txt"'
        echo 'Copy Station List from weather.noaa.gov/data/nsd_cccc.txt and place file in same dir as script'
