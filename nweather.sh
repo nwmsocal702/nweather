@@ -1,4 +1,8 @@
 #!/bin/bash
+#Nweather Version 1.0
+#Date 5-31-2015
+#Dependencies GNU BASH Version 4.3. GNU Coreutils 8.21. grep 2.20. Curl 7.37.1
+# Nweather is an application to retrieve up to date weather information from around the world
 
 # Get informtion getopts: basically just saves output of different command line switch arguments into variables
 
@@ -18,6 +22,15 @@ then
        exit 1
        fi
        fi
+
+#Find out if statelist.txt exists
+if [ ! -r "`pwd`/statelist.txt" ]
+then
+	echo "Error: Statelist.txt is not found in current Directory"
+	echo "You can download the statelist at:" 
+	echo "https://github.com/nwmsocal702/nweather/blob/master/statelist.txt"
+	exit 1
+fi
 
 #Help screen
 
@@ -120,5 +133,5 @@ if
 then
 	echo -e "\n"
 	echo "Error: Current weather information does not exist for $city"
-	exit
+	exit 1
 fi
