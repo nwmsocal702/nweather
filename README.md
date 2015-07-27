@@ -35,5 +35,9 @@ LICENSING: This is FREE software licensed under the GNU GENERAL PUBLIC LICENSE V
 
 QUESTIONS: To contact the developer for further questions,feature requests, feedback or to submit a bug report email nwmsocal702@gmail.com
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d12fa9ee2511389551f7d86e92feccdf121f9aa
 
 

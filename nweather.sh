@@ -1,7 +1,13 @@
 #!/bin/bash
+<<<<<<< HEAD
 # Nweather Version 1.0
 # Date 5-31-2015
 # Dependencies GNU BASH Version 4.3, GNU Coreutils 8.21, GNU Grep 2.20, GNU Wget 1.15
+=======
+# Nweather version 1
+# Date 05-31-2015
+# Dependencies GNU Bash 4.3, GNU Coreutils 8.21, GNU Grep 2.20, GNU Wget 1.15
+>>>>>>> 9d12fa9ee2511389551f7d86e92feccdf121f9aa
 # Nweather is an application to retrieve up to date weather information from around the world!
 
 # Default setting no args if you already know stationID
