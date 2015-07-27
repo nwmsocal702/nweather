@@ -1,10 +1,8 @@
 #!/bin/bash
-#Nweather Version 1.0
-#Date 5-31-2015
-#Dependencies GNU BASH Version 4.3. GNU Coreutils 8.21. grep 2.20. Curl 7.37.1
-# Nweather is an application to retrieve up to date weather information from around the world
-
-# Get informtion getopts: basically just saves output of different command line switch arguments into variables
+# Nweather Version 1.0
+# Date 5-31-2015
+# Dependencies GNU BASH Version 4.3, GNU Coreutils 8.21, GNU Grep 2.20, GNU Wget 1.15
+# Nweather is an application to retrieve up to date weather information from around the world!
 
 # Default setting no args if you already know stationID
 # Replace "KSBD" in line below with the the four letter station ID of your choice from nsd_cccc.txt
@@ -106,7 +104,7 @@ then
 elif
 	[[ -z $city && -z $state && -z $country && -z $h ]]
 then
-	curl $def
+	wget -qO- $def
 	exit 0
 elif
 	[[ -n $h ]]
@@ -123,7 +121,7 @@ fi
 
 for s in $stationID
 do
-	curl -sf http://weather.noaa.gov/pub/data/observations/metar/decoded/"$s".TXT && echo -e "\n"
+	wget -qO- -sf http://weather.noaa.gov/pub/data/observations/metar/decoded/"$s".TXT && echo -e "\n"
 done
 
 # Tell if search found nothing
@@ -135,3 +133,4 @@ then
 	echo "Error: Current weather information does not exist for $city"
 	exit 1
 fi
+exit 0
