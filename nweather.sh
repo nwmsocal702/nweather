@@ -26,41 +26,8 @@
 
 set -o errtrace
 set -o pipefail
-export nsd
-export stl
 
 
-# Check where nweather is installed amd if data files are found
-function first_check() {
-local data_dir=/var/lib
-local sh_dir=/usr/local/bin
-
-if [[ "${PWD}" == ${sh_dir}/nweather ]]; then
-	[[ -s "${data_dir}/nsd_cccc.txt" ]] && 
-        [[ -s "${data_dir}/statelist.txt" ]] && val1=1	
-	
-else
-	[[ -s "$PWD/nsd_cccc.txt" ]] &&
-	[[ -s "$PWD/statelist.txt" ]] && val2=1
-fi
-
-if [[ -n "$val1" || -n "$val2" ]]; then
-	:
-elif [[ -n "$val1" ]]; then
-	nsd="/var/lib/nweather/nsd_cccc.txt"
-	stl="/var/lib/nweather/statelist.txt"
-elif [[ -z "$val1" && -n "$val2" ]]; then
-	nsd="nsd_cccc.txt"
-	stl="statelist.txt"
-else
-	echo "Error: nsd_cccc.txt/statelist.txt Files not found!"
-	echo 'To install: sudo bash -c "$(wget https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh -O -)"' 
-	exit 1
-fi
-
-}
-
-	
 #Help screen
 function helpfunction () {
 echo "Nweather -h (help)"
@@ -88,8 +55,30 @@ echo
 
 
 function mainf() {
-first_check "$@"
 local def=weather.noaa.gov/pub/data/observations/metar/decoded/KSBD.TXT
+local shdir='/usr/local/bin'
+local datadir='/var/lib/nweather'
+local git='https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh' 
+
+if [[ "$PWD" == "$shdir" ]]; then
+      [ -e "$datadir/nsd_cccc.txt" ] && local nsd="$datadir/nsd_cccc.txt" &&
+      [ -e "$datadir/statelist.txt" ] && local stl="$datadir/statelist.txt" ||
+      local fail=1;
+else
+      [ -e "$PWD/nsd_cccc.txt" ] && local nsd="$PWD/nsd_cccc.txt" &&
+      [ -e "$PWD/statelist.txt" ] && local stl="$PWD/statelist.txt" ||
+      local fail=1
+fi
+
+if [[ "$fail" -eq 1 ]]; then
+	echo -n "Error: Cannot locate data files, Would you like to Reinstall? [Y/N] "
+	read answer
+	if [[ "$answer" =~ ^[y|Y|yes|Yes|YES]{1,3}$ ]]; then
+		sudo bash -c "$(wget $git -O -)"
+                exit 0
+        fi
+fi
+
 
 while getopts ":l:s:c:h" opt
 do
