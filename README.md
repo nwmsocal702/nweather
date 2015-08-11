@@ -9,10 +9,16 @@ DEPENDENCIES required: GNU BASH Version 4.3.30, GNU Coreutils 8.21, Grep 2.20, W
 Also Required is the station ID List (nsd_cccc.txt) and the statelist file (statelist.txt). Both are readily available at https://github.com/nwmsocal702/nweather.
 
 ##INSTALL
-`sudo bash -c "$(wget https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh -O -)"`
+
+#### Via Wget
+`bash -c "$(wget https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh -O -)"`
+
+#### Via Curl
+`bash -c "$(curl -fsSL https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh)"` 
 
 
-INSTALLATION: To Download go to https://github.com/nwmsocal702/nweather. Default installation using the install script downloades and installs nweather to /usr/local/bin and the data files to /var/lib. But nweather will also work if nweather.sh and nsd_cccc.txt and statelist.txt are in the same directory. I also recommend changing the default station ID which is set in the def variable on line 11 in the nweather script and replace the four letter stationid KSBD with the station ID of the station closest to you. You can find your stationID by searching the stationlist ID file nsd_cccc.txt.
+
+INSTALLATION: To Download go to https://github.com/nwmsocal702/nweather. Default installation using the install script downloades and installs nweather to /usr/local/bin and the data files to /var/lib. But nweather will also work if nweather.sh and nsd_cccc.txt and statelist.txt are in the same directory. I also recommend changing the default station ID which is set in the def variable on line 12 in the nweather script and replace the four letter stationid KSBD with the station ID of the station closest to you. You can find your stationID by searching the stationlist ID file nsd_cccc.txt.
 For best practice and ease of use, if not installing nweather inside your PATH I set an alias in my .bashrc for nweather
 like this: alias weather='bash ~/nweather.sh' 
 
@@ -37,8 +43,10 @@ Also if the -c option is selected do not abbreviate country
 Search arguments which include spaces must be qouted
 `ex: "los angeles" is a valid search term whereas los angeles is not.`
 
-LICENSING: This is FREE software licensed under the GNU GENERAL PUBLIC LICENSE Version 3.  http://www.gnu.org/licenses/gpl-3.0.html 
+##LICENSING
+This is FREE software licensed under the GNU GENERAL PUBLIC LICENSE Version 3.  http://www.gnu.org/licenses/gpl-3.0.html 
 
-QUESTIONS: To contact the developer for further questions,feature requests, feedback or to submit a bug report email nwmsocal702@gmail.com
+##QUESTIONS
+To contact the developer for further questions,feature requests, feedback or to submit a bug report email nwmsocal702@gmail.com
 
 
