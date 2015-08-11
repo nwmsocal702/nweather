@@ -213,9 +213,9 @@ echo "Successfully unpacked Nweather to Home Directory!"
 #-------------------------------------------------------------------------------
 function hashtest() {
 download "$@"
-local nweathersum='15b0760227a3c086acadead5056e35695fe34edba2c57100abc56325208831d7'
+local nweathersum='5e3f8c8057df323cddc067152bb410e98c90e0671bff425eefefc7956f289a82'
 local statelistsum='14f624a6791200c440b7cbf5607113826d1dad3509935e7f781d39656ba27b74'
-local nsd_ccccsum='da88e9e00d22c044c7e9d681d64faaf15627608805700a14bd1db9c13f1b2a92'
+local nsd_ccccsum='66185bb2c83d7d3a6da8a31e144442d912f32fd5c1088c3d34c7f4bda077913f'
 
 shsum=$(sha256sum ~/nweather/nweather.sh | cut -d' ' -f1)      ||
 { local message="Calculating sha256 Hash of nweather.sh"; false; }
@@ -248,7 +248,7 @@ fi
 #   DESCRIPTION: Final installation of files 
 #-------------------------------------------------------------------------------
 function final_install() {
-download "$@"
+hashtest "$@"
 local sh_dir='/usr/local/bin'
 local data_dir='/var/lib'
 
