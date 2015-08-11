@@ -3966,7 +3966,7 @@ KSAV;72;207;SAVANNAH INTERNATIONAL AIRPORT ;GA;United States;4;32-07N;81-12W;32-
 KSAW;--;---;Marquette, Sawyer International Airport;MI;United States;4;46-21-13N;087-23-43W;;;372;;
 KSAZ;--;---;Staples, Staples Municipal Airport;MN;United States;4;46-22-51N;094-48-24W;;;392;;
 KSBA;--;---;SANTA BARBARA MUNICIPAL;CA;United States;4;34-26N;119-51W;34-25-49N;119-50-36W;3;3;
-KSBD;--;---;Norton Air Force Base / San Bern;CA;United States;4;34-06N;117-14W;;;353;;
+KSBD;--;---;Norton Air Force Base / San Bernardino;CA;United States;4;34-06N;117-14W;;;353;;
 KSBM;--;---;SHEBOYGAN CO MEMORIAL AIRPORT ;WI;United States;4;43-47N;87-51W;43-45-41N;087-51-04W;228;232;
 KSBN;72;535;SOUTH BEND REGIONAL AIRPORT;IN;United States;4;41-42N;086-19W;41-42-31N;086-18-52W;244;237;
 KSBP;--;---;SAN LUIS OBISPO MC CHESNEY;CA;United States;4;35-14N;120-38W;35-14-19N;120-38-22W;64;59;
