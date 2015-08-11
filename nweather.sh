@@ -1,9 +1,28 @@
 #!/bin/bash
-# Nweather Version 1.0
-# Date 5-31-2015
-# Dependencies GNU BASH Version 4.3, GNU Coreutils 8.21, GNU Grep 2.20, GNU Wget 1.15
-# Nweather is an application to retrieve up to date weather information from around the world!
-
+#===============================================================================
+#
+#          FILE: nweather
+#
+#         USAGE: ./nweather
+#
+#   DESCRIPTION: Small program to retrieve up to date weather information from
+#                around the world and display it inside the terminal! 
+#           
+#       OPTIONS: By default no options it displays info for one station that is set
+#                by the user but can also look up current weather conditions for almost
+#                any major city in the world!
+#  REQUIREMENTS: GNU BASH 4, GNU Coreutils 8.21, GNU Grep 2.20, GNU Wget 1.15
+#          BUGS: Currently in development
+#         NOTES:
+#        AUTHOR: nwmsocal (), nwmsocal702@gmail.com
+#  ORGANIZATION: N/A
+#       CREATED: 05-31-2015
+#      REVISION: 1.1.2
+#       LICENSE: GNU GPLv3
+#
+#
+#
+#===============================================================================
 
 set -o errtrace
 set -o pipefail

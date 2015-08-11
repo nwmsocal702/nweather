@@ -327,8 +327,9 @@ fi
 
 echo "Success: Type nweather for default Station's current conditions
 and type nweather -h for a list of options for other stations or locations"
+
+exit 0
 }
 
 station_check "$@"
 
-exit 0
