@@ -11,10 +11,10 @@ Also Required is the station ID List (nsd_cccc.txt) and the statelist file (stat
 ##INSTALL
 
 #### Via Wget
-`bash -c "$(wget https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh -O -)"`
+`sudo bash -c "$(wget https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh -O -)"`
 
 #### Via Curl
-`bash -c "$(curl -fsSL https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh)"` 
+`sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/nwmsocal702/nweather/master/install.sh)"` 
 
 
 
